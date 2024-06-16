@@ -26,6 +26,9 @@ INSERT INTO tb_section (title, description, position, img_Uri, resource_id, prer
 INSERT INTO tb_section (title, description, position, img_Uri, resource_id, prerequisite_id) VALUES ('Capitulo 2 ', 'Neste capitulo vamos continuar', 2, 'https://th.bing.com/th/id/OIP.iHRuj81ROgUp9IUaw5um2gHaEO?w=295&h=180&c=7&r=0&o=5&pid=1.7', 1, 1);
 INSERT INTO tb_section (title, description, position, img_Uri, resource_id, prerequisite_id) VALUES ('Capitulo 3 ', 'Neste capitulo vamos finalizar', 3, 'https://th.bing.com/th/id/OIP.iHRuj81ROgUp9IUaw5um2gHaEO?w=295&h=180&c=7&r=0&o=5&pid=1.7', 1, 2);
 
+INSERT INTO tb_enrollment(user_id, offer_id, enroll_Moment, refund_Moment, available, only_Update) VALUES (1, 1, TIMESTAMP WITH TIME ZONE '2022-07-14T13:00:00.00Z', null, true, false);
+INSERT INTO tb_enrollment(user_id, offer_id, enroll_Moment, refund_Moment, available, only_Update) VALUES (2, 1, TIMESTAMP WITH TIME ZONE '2022-07-14T13:00:00.00Z', null, true, false);
+
 
 
 
