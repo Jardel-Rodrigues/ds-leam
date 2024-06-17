@@ -1,5 +1,6 @@
 package com.softstream.dsleam.entities;
 
+import java.io.Serializable;
 import java.time.Instant;
 
 import com.softstream.dsleam.entities.pk.EnrollmentPK;
@@ -11,24 +12,26 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_enrollment")
-public class Enrollment {
-	
+public class Enrollment implements Serializable{
+	private static final long serialVersionUID = 1L;
+
 	@EmbeddedId
 	private EnrollmentPK id = new EnrollmentPK();
-	
+
 	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
 	private Instant enrollMoment;
-	
+
 	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
 	private Instant refundMoment;
 	private boolean available;
 	private boolean onlyUpdate;
-	
+
 	public Enrollment() {
-		
+
 	}
 
-	public Enrollment(User user, Offer offer, Instant enrollMoment, Instant refundMoment, boolean available, boolean onlyUpdate) {
+	public Enrollment(User user, Offer offer, Instant enrollMoment, Instant refundMoment, boolean available,
+			boolean onlyUpdate) {
 		id.setUser(user);
 		id.setOffer(offer);
 		this.enrollMoment = enrollMoment;
@@ -40,15 +43,15 @@ public class Enrollment {
 	public User getStudent() {
 		return id.getUser();
 	}
-	
+
 	public void SetStudent(User user) {
 		id.setUser(user);
 	}
-	
+
 	public Offer getOffer() {
 		return id.getOffer();
 	}
-	
+
 	public void SetOffer(Offer offer) {
 		id.setOffer(offer);
 	}
@@ -84,7 +87,5 @@ public class Enrollment {
 	public void setOnlyUpdate(boolean onlyUpdate) {
 		this.onlyUpdate = onlyUpdate;
 	}
-	
-	
 
 }

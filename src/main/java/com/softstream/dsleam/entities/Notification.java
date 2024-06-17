@@ -1,5 +1,6 @@
 package com.softstream.dsleam.entities;
 
+import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
 
@@ -13,8 +14,9 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_notification")
-public class Notification {
-
+public class Notification implements Serializable{
+	private static final long serialVersionUID = 1L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
